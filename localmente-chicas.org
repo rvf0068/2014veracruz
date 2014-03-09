@@ -116,3 +116,7 @@
 ¡Gracias!
 #+end_huge
 #+end_center
+* COMMENT Problemas abiertos
+  - ¿Qué determina que una gráfica tenga una única extensión?
+  - Clan comportamiento de sólidos arquimedianos y sólidos de Johnson
+  - Menor tamaño de gráfica con extensiones de comportamiento distinto
