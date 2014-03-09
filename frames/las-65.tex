@@ -1,14 +1,12 @@
 \documentclass[beamer]{standalone}
 
-%\usepackage{pgffor}
-
 \input{../veracruz.sty}
-\makeatletter
-\input{code-graphs}
-\makeatother
+% \makeatletter
+% \input{code-graphs}
+% \makeatother
 
+\begin{document}
 \SetVertexSimple[FillColor=gray, MinSize=1pt, InnerSep=1pt, LineWidth=0.5pt]
-%\renewcommand{\VertexSmallMinSize}{1pt}
 
 \tikzset{EdgeStyle/.style= {%
     color           = white,
@@ -17,7 +15,6 @@
 
 \setlength{\fboxsep}{1pt}
 
-\begin{document}
 \begin{standaloneframe}
   \tiny
   \begin{center}
@@ -27,7 +24,7 @@
     \foreach \n in {\thenstart,...,\thenend}{%
       \begin{minipage}{0.10\linewidth}
         \centering
-        \graphs{i=\n}\\ \names{i=\n}
+        \graphst{i=\n}{0.3}\\ \names{i=\n}
       \end{minipage}
     }
     \medskip
@@ -35,7 +32,7 @@
   \foreach \n in {64,65}{%
       \begin{minipage}{0.10\linewidth}
         \centering
-        \graphs{i=\n}\\ \names{i=\n}
+        \graphst{i=\n}{0.3}\\ \names{i=\n}
       \end{minipage}
     }
 \end{center}

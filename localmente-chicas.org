@@ -66,13 +66,7 @@
 #+latex: \input{frames/hall}
 
 * Las 65
-#+BEGIN_LaTeX
-  \begin{tikzpicture}[remember picture,overlay]
-    \node[xshift=0cm,yshift=0cm] at (current page.center) {%
-      \includegraphics[width=\paperwidth]{./frames/las-65.pdf}
-    };
-  \end{tikzpicture}  
-#+END_LaTeX
+#+latex: \input{frames/las-65}
 
 * Cuello local
 #+latex: \input{frames/cuello-local}
