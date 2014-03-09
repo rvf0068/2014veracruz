@@ -7,26 +7,31 @@
   \hfill
   \begin{tikzpicture}
     \grOctahedron[RA=1]{3}
-    \graphcaption{0}{-1.6}{$G$}
+    \graphcaption{0}{-1.6}{$G=O_{3}$}
 
     \uncover<2->{%
       \begin{scope}[xshift=3cm]
         \grOctahedron[RA=1.2]{4}
       \end{scope}
-      \graphcaption{3}{-2.0}{$K(G)$}
+      \graphcaption{3}{-2.0}{$K(G)=O_{4}$}
     }
     \uncover<3->{%
       \begin{scope}[xshift=7.3cm]
         \grOctahedron[RA=2.3]{8}
       \end{scope}
-      \graphcaption{7.3}{-3.2}{$K^{2}(G)$}
+      \graphcaption{7.3}{-3.2}{$K^{2}(G)=O_{8}$}
     }
   \end{tikzpicture}
   \hfill\hfill
 
   \begin{center}
+    \vspace*{-1cm}
     \uncover<4->{$|K^{3}(G)|=256$,\qquad}
     \uncover<5->{$|K^{4}(G)|=2^{128}$}
+    \smallskip
+
+    \uncover<6->{$O_{n}=\overline{nK_{2}}$,\qquad}
+    \uncover<7->{$K(O_{n})=O_{2^{n-1}}$ (Neumann-Lara, 1976)}
   \end{center}  
 \end{standaloneframe}
 \end{document}
