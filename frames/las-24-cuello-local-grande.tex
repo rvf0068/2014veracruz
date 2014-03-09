@@ -1,0 +1,56 @@
+\documentclass[beamer]{standalone}
+
+\input{../veracruz.sty}
+
+\makeatletter
+\input{code-graphs}
+\makeatother
+
+\SetVertexSimple[FillColor=gray, MinSize=1pt, InnerSep=2pt, LineWidth=0.5pt]
+
+\tikzset{EdgeStyle/.style= {%
+    color           = white,
+    double          = black,
+    double distance = 0.5pt}}
+
+\setlength{\fboxsep}{1pt}
+
+\begin{document}
+\begin{standaloneframe}
+  \tiny
+  \begin{center}
+    \foreach \n in {1,2,3,4,5,7}{%
+      \begin{minipage}{0.15\linewidth}
+        \centering
+        \graphs{i=\n}\\ \names{i=\n}
+      \end{minipage}
+    }
+    \bigskip
+
+    \foreach \n in {8,9,11,14,15,16}{%
+      \begin{minipage}{0.15\linewidth}
+        \centering
+        \graphs{i=\n}\\ \names{i=\n}
+      \end{minipage}
+    }
+    \bigskip
+
+    \foreach \n in {17,19,21,28,29,30}{%
+      \begin{minipage}{0.15\linewidth}
+        \centering
+        \graphs{i=\n}\\ \names{i=\n}
+      \end{minipage}
+    }
+    \bigskip
+
+    \foreach \n in {31,33,34,36,38,40}{%
+      \begin{minipage}{0.15\linewidth}
+        \centering
+        \graphs{i=\n}\\ \names{i=\n}
+      \end{minipage}
+    }
+    \bigskip
+    
+\end{center}
+\end{standaloneframe}
+\end{document}

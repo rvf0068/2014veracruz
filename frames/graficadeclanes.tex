@@ -1,0 +1,36 @@
+\documentclass[beamer]{standalone}
+
+\input{../veracruz.sty}
+
+\begin{document}
+\begin{standaloneframe}
+  La \alert{gráfica de clanes} de $G$ es la gráfica $K(G)$ tal que:
+  \begin{itemize}
+  \item $V\big(K(G)\big)=\setof{Q\subseteq V(G)}{\text{$Q$ es clan de
+        $G$}}$,\pause
+  \item $E\big(K(G)\big)=\setof{\{Q_{1},Q_{2}\}}{Q_{1}\ne Q_{2},Q_{1}\cap
+      Q_{2}\ne\emptyset}$.
+  \end{itemize}
+
+  \pause\bigskip
+
+  \begin{center}
+    \begin{tikzpicture}
+      \pgfmathsetmacro{\edgel}{1.8}
+      \pgfmathsetmacro{\rad}{\edgel/sqrt(2)}
+      \grHouse[RA=\rad]
+      \Edge(a0)(a2)
+      \Edge(a1)(a3)   
+      \uncover<3>{\AddVertexColor{blue}{a0,a1,a4}}
+      \uncover<4>{\AddVertexColor{red}{a0,a1,a2,a3}}
+      \graphcaption{0}{-0.9*\edgel}{$G$}
+      \uncover<5->{%
+        \grPath[RA=\edgel,form=2,rotation=90,x=4,y=\edgel/2]{2}
+        \AddVertexColor{red}{a0}
+        \AddVertexColor{blue}{a1}
+        \graphcaption{4}{-0.9*\edgel}{$K(G)$}
+      }
+    \end{tikzpicture}
+  \end{center}
+\end{standaloneframe}
+\end{document}

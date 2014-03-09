@@ -1,0 +1,51 @@
+\documentclass[beamer]{standalone}
+
+\input{../veracruz.sty}
+
+\begin{document}
+
+\SetVertexSimple[FillColor=gray, MinSize=1pt, InnerSep=2pt, LineWidth=0.5pt]
+
+\tikzset{EdgeStyle/.style= {%
+    color           = white,
+    double          = black,
+    double distance = 0.5pt}}
+
+\setlength{\fboxsep}{1pt}
+
+\begin{standaloneframe}
+  \scriptsize
+  \begin{center}
+    \foreach \n in {47,48,49}{%
+      \begin{minipage}{0.3\linewidth}
+        \centering
+        \graphst{i=\n}{0.8}\\ \names{i=\n}
+      \end{minipage}
+    }
+    \bigskip
+
+    \foreach \n in {50,53,56}{%
+      \begin{minipage}{0.3\linewidth}
+        \centering
+        \graphst{i=\n}{0.8}\\ \names{i=\n}
+      \end{minipage}
+    }
+    \bigskip
+
+    6 gráficas restantes
+  \end{center}
+  
+  \pause
+
+  \begin{itemize}
+  \item Las gráficas \names{i=47}, \names{i=49}, \names{i=50} y
+    \names{i=56} son tales que toda extensión de ellas es Helly, por
+    resultado de Larrión, Pizaña, V. (2013): \textsl{Si $G$ es libre de
+      $4,5,6$-ruedas, entonces $K(G)$ es Helly}.\pause
+  \item Toda extensión de la gráfica \names{i=48} es divergente, por
+    resultado de Larrión, Pizaña, V. (2014).\pause
+  \item La gráfica \names{i=53} tiene una única extensión, con
+    comportamiento desconocido.
+  \end{itemize}
+\end{standaloneframe}
+\end{document}

@@ -1,0 +1,46 @@
+\documentclass[beamer]{standalone}
+
+\input{../veracruz.sty}
+
+\begin{document}
+
+\SetVertexSimple[FillColor=gray, MinSize=1pt, InnerSep=2pt, LineWidth=0.5pt]
+
+\tikzset{EdgeStyle/.style= {%
+    color           = white,
+    double          = black,
+    double distance = 0.5pt}}
+
+\setlength{\fboxsep}{1pt}
+
+\begin{standaloneframe}
+  \tiny
+  \begin{center}
+    \foreach \n in {10,18,22,24,25}{%
+      \begin{minipage}{0.18\linewidth}
+        \centering
+        \graphst{i=\n}{0.6}\\ \names{i=\n}
+      \end{minipage}
+    }
+    \bigskip
+
+    \foreach \n in {32,37,42,43,45}{%
+      \begin{minipage}{0.18\linewidth}
+        \centering
+        \graphst{i=\n}{0.6}\\ \names{i=\n}
+      \end{minipage}
+    }
+    \bigskip
+
+    \foreach \n in {51,55,63}{%
+      \begin{minipage}{0.18\linewidth}
+        \centering
+        \graphst{i=\n}{0.6}\\ \names{i=\n}
+      \end{minipage}
+    }
+    \bigskip
+
+    13 gráficas con una arista con un extremo dominado
+\end{center}
+\end{standaloneframe}
+\end{document}

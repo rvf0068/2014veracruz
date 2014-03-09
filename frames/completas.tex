@@ -1,0 +1,26 @@
+\documentclass[beamer]{standalone}
+
+\input{../veracruz.sty}
+
+\begin{document}
+\begin{standaloneframe}
+  Decimos que un conjunto de vértices $X$ es una \alert{completa} si
+  para todos $x,y\in X$ con $x\ne y$ se tiene que $x\sim y$.
+
+  \pause
+
+  \begin{center}
+    \begin{tikzpicture}[scale=1.2]
+      \pgfmathsetmacro{\edgel}{2}
+      \pgfmathsetmacro{\rad}{\edgel/sqrt(2)}
+      \grHouse[RA=\rad]
+      \Edge(a0)(a2)
+      \Edge(a1)(a3)
+      \only<3>{\AddVertexColor{red}{a0,a2,a3}}
+      \only<4>{\AddVertexColor{blue}{a0,a1,a4}}
+      \only<5>{\AddVertexColor{green}{a0,a1,a2,a3}}
+      \only<6>{\AddVertexColor{magenta}{a2}}
+    \end{tikzpicture}
+  \end{center}
+\end{standaloneframe}
+\end{document}

@@ -1,0 +1,24 @@
+\documentclass[beamer]{standalone}
+
+\input{../veracruz.sty}
+
+\begin{document}
+\begin{standaloneframe}
+  \begin{itemize}
+  \item El \alert{cuello} $g(G)$ de una gráfica $G$ es la longitud del ciclo
+    mas pequeño en $G$.\pause
+  \item Si $G$ no tiene ciclos, se define $g(G)=\infty$.\pause
+  \item El \alert{cuello local} de $G$ es
+    \begin{equation*}
+    lg(G)=\min\{g(N(x))\mid x\in G\}.      
+    \end{equation*}
+  \end{itemize}
+  
+  \pause\bigskip
+  
+  Si $G$ es extensión de $L$, tenemos que
+  \begin{equation*}
+    lg(G)=g(L)
+  \end{equation*}
+\end{standaloneframe}
+\end{document}

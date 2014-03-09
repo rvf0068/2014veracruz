@@ -1,0 +1,31 @@
+\documentclass[beamer]{standalone}
+
+\input{../veracruz.sty}
+
+\begin{document}
+\begin{standaloneframe}
+  Las \alert{gráficas iteradas de clanes} se definen como:
+  \begin{equation*}
+    K^{0}(G)=G,\qquad K^{n}(G)=K\big(K^{n-1}(G)\big),\quad n\geq1.
+  \end{equation*}
+  \pause
+  \begin{center}
+    \begin{tikzpicture}
+      \pgfmathsetmacro{\edgel}{1.8}
+      \pgfmathsetmacro{\rad}{\edgel/sqrt(2)}
+      \grHouse[RA=\rad]
+      \Edge(a0)(a2)
+      \Edge(a1)(a3)   
+      \graphcaption{0}{-0.9*\edgel}{$G$}
+      \uncover<3->{%
+        \grPath[RA=\edgel,form=2,rotation=90,x=3,y=\edgel/2]{2}
+        \graphcaption{3}{-0.9*\edgel}{$K(G)$}
+      }
+      \uncover<4->{%
+        \Vertex[x=6,y=\edgel/2]{x}
+        \graphcaption{6}{-0.9*\edgel}{$K^{2}(G)$}
+      }
+    \end{tikzpicture}
+  \end{center}
+\end{standaloneframe}
+\end{document}

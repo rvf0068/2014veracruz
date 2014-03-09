@@ -1,0 +1,905 @@
+%\makeatletter
+
+\newcounter{nstart}
+\newcounter{nend}
+
+\define@cmdkey[GRA]{small}{i}{}
+
+\newcommand{\graphs}[1]{%
+  \setkeys[GRA]{small}{#1}%
+  \begin{tikzpicture}[scale=0.4]
+  \ifcase\cmdGRA@small@i
+  \or % i=1
+  \Vertex[x=0,y=0]{a0}
+  \or % i=2
+  \grEmptyPath[RA=1]{2}
+  \or % i=3
+  \grPath[RA=1]{2}
+  \or % i=4
+  \grEmptyPath[RA=1]{3}
+  \or % i=5
+  \grPath[form=2,rotation=90,RA=1]{2}
+  \Vertex[x=1,y=0]{a2}
+  \or % i=6
+  %\grComplete[RA=1/sqrt(3),rotation=90]{3}
+  \grComplete[RA=1/(1+cos(60)),rotation=90]{3}
+  \or % i=7
+  \grEmptyCycle[RA=1/sqrt(2),rotation=45]{4}
+  \or % i=8
+  \grPath[form=2,rotation=90,RA=1]{2}
+  \grEmptyPath[form=2,x=1,prefix=b,rotation=90,RA=1]{2}
+  \or % i=9
+  \grPath[form=2,rotation=90,RA=1]{2}
+  \grPath[form=2,x=1,prefix=b,rotation=90,RA=1]{2}
+  \or % i=10
+  \grEmptyCycle[RA=1/sqrt(2),rotation=45]{4}
+  \EdgeInGraphLoop{a}{3}
+  \or % i=11
+  \grEmptyCycle[RA=1/sqrt(2),rotation=45]{4}
+  \EdgeInGraphLoop*{a}{4}
+  \or % i=12
+  \grCycle[RA=1/sqrt(2),rotation=45]{4}
+  \or % i=13
+  \grComplete[RA=1/sqrt(2),rotation=45]{4}
+  \or % i=14
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1]{2}
+  % \grEmptyCycle[RA=1/2*cosec(36),rotation=90]{5}
+  \or % i=15
+  \grPath[form=2,y=1,RA=1]{2}
+  \grEmptyPath[form=2,RA=1]{3}
+  \or % i=16
+  \grPath[RA=1,form=2,rotation=90]{2}
+  \grPath[RA=1,form=2,x=1,y=0,prefix=b,rotation=90]{2}
+  \Vertex[x=2,y=0]{c0}
+  \or % i=17
+  \grPath[RA=1,form=2,rotation=90]{2}
+  \grEmptyPath[RA=1,form=2,x=1,y=0,prefix=b,rotation=90]{2}
+  \EdgeIdentity{a}{b}{2}
+  \Vertex[x=2,y=0]{c0}
+  % \grEmptyCycle[RA=1,rotation=90+72]{5}
+  % \EdgeInGraphLoop*{a}{4}
+  \or % i=18
+  \grEmptyPath[RA=1,form=2,rotation=90]{2}
+  \grPath[RA=1,form=2,x=1,y=0,prefix=b,rotation=90]{2}
+  \Vertex[x=2,y=0]{c0}
+  \EdgeFromOneToAll{c}{b}{0}{2}
+  % \grEmptyCycle[RA=1,rotation=18]{5}
+  % \EdgeInGraphLoop{a}{3}
+  \or % i=19
+  \grPath[form=2,RA=1]{3}
+  \grPath[form=2,RA=1,y=1,prefix=b]{2}
+  \or % i=20
+  \grPath[RA=1,form=2,rotation=90]{2}
+  \grPath[RA=1,form=2,x=1,y=0,prefix=b,rotation=90]{2}
+  \EdgeIdentity{a}{b}{2}
+  \Vertex[x=2,y=0]{c0}
+  % \grEmptyCycle[RA=1,rotation=90+72]{5}
+  % \EdgeInGraphLoop{a}{4}
+  \or % i=21
+  \grEmptyPath[RA=1,form=2,rotation=90]{2}
+  \grEmptyPath[RA=1,form=2,x=1,y=0,prefix=b,rotation=90]{2}
+  \EdgeIdentity{a}{b}{2}
+  \Vertex[x=2,y=0]{c0}
+  \EdgeFromOneToAll{c}{b}{0}{2}
+  % \grEmptyCycle[RA=1,rotation=-54]{5}
+  % \EdgeInGraphLoop*{a}{5}  
+  \or % i=22
+  \grPath[RA=1,form=2,rotation=90]{2}
+  \grPath[RA=1,form=2,x=1,y=0,prefix=b,rotation=90]{2}
+  \Vertex[x=2,y=0]{c0}
+  \EdgeFromOneToAll{c}{b}{0}{2}
+  % \grEmptyCycle[RA=1,rotation=18]{5}
+  % \EdgeInGraphLoop{a}{3}
+  % \Edge(a3)(a4)
+  \or % i=23
+  %\grCycle[RA=1/2*cosec(36),rotation=18]{5}
+  % \grCycle[RA=1/(1+cos(36)),rotation=18]{5}
+  \grPath[form=2,RA=1]{3}
+  \grPath[form=2,RA=1,y=1,prefix=b]{2}
+  \Edge(a0)(b0)
+  \Edge(a2)(b1)
+  \or % i=24
+  \grPath[RA=1,form=2,rotation=90]{2}
+  \grPath[RA=1,form=2,x=2,y=0,prefix=b,rotation=90]{2}
+  \Vertex[x=1,y=0]{c0}
+  \EdgeFromOneToAll{c}{b}{0}{2}
+  \EdgeFromOneToAll{c}{a}{0}{2}
+  % \Vertex{a0}
+  % \grPath[RA=\edgel,form=2,rotation=90,x=\edgelosqthree,prefix=b]{2}
+  % \grPath[RA=\edgel,form=2,rotation=90,x=-\edgelosqthree,prefix=c]{2}
+  % \EdgeFromOneToAll{a}{b}{0}{2}
+  % \EdgeFromOneToAll{a}{c}{0}{2}
+  \or % i=25
+  \grPath[RA=1,form=2,rotation=90]{2}
+  \grPath[RA=1,form=2,x=1,y=0,prefix=b,rotation=90]{2}
+  \EdgeIdentity{a}{b}{2}
+  \Edge(a0)(b1)
+  \Edge(a1)(b0)
+  \Vertex[x=2,y=0]{c0}
+  % \grEmptyCycle[RA=1,rotation=90+72]{5}
+  % \EdgeInGraphLoop{a}{4}
+  % \Edge(a0)(a2)
+  % \Edge(a1)(a3)
+  \or % i=26
+  \grPath[RA=1,form=2,rotation=90]{2}
+  \grPath[RA=1,form=2,x=1,y=0,prefix=b,rotation=90]{2}
+  \EdgeIdentity{a}{b}{2}
+  \Vertex[x=2,y=0]{c0}
+  \EdgeFromOneToAll{c}{b}{0}{2}
+  % \grCycle[RA=1,rotation=90]{5}
+  % \Edge(a1)(a4)
+  \or % i=27
+  \grComplete[RA=1/2*cosec(36),rotation=90]{5}
+  \or % i=28
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1]{3}
+  % \grEmptyCycle[RA=1/2*cosec(30)]{6}
+  \or % i=29
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  % \grEmptyCycle[RA=1]{6}
+  % \Edge(a4)(a5)
+  \or % i=30
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(a1)(b1)
+  % \grEmptyCycle[RA=1]{6}
+  % \Edge(a4)(a5)
+  % \Edge(a1)(a2)
+  \or % i=31
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(a1)
+  \Edge(a0)(b0)
+  \Edge(b0)(b1)
+  % \grEmptyCycle[RA=1,rotation=180]{6}
+  % \EdgeInGraphLoop*{a}{4}
+  \or % i=32
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(a1)
+  \Edge(a0)(b0)
+  \Edge(b0)(a1)
+  % \grEmptyCycle[RA=1,rotation=-150]{6}
+  % \EdgeInGraphLoop{a}{3}
+  \or % i=33
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(a1)
+  \Edge(a0)(b0)
+  \Edge(b2)(a2)
+  % \grEmptyCycle[RA=1,rotation=-150]{6}
+  % \EdgeInGraphLoop*{a}{3}
+  % \Edge(a3)(a5)
+  \or % i=34
+  \grEmptyPath[RA=1]{3}
+  \grEmptyPath[RA=1,prefix=b,y=1]{3}
+  \EdgeIdentity{a}{b}{3}
+  \or % i=35
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(a1)
+  \Edge(a0)(b0)
+  \Edge(b0)(b1)
+  \Edge(a1)(b1)
+  % \grEmptyCycle[RA=1,rotation=180]{6}
+  % \EdgeInGraphLoop{a}{4}
+  \or % i=36
+  \grPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(b0)(b1)
+  % \grEmptyCycle[RA=1,rotation=150]{6}
+  % \EdgeInGraphLoop*{a}{5}
+  \or % i=37
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(a1)
+  \Edge(a0)(b0)
+  \Edge(a1)(b0)
+  \Edge(b2)(a2)
+  % \grEmptyCycle[RA=1,rotation=-150]{6}
+  % \EdgeInGraphLoop{a}{3}
+  % \Edge(a3)(a5)
+  \or % i=38
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(a1)
+  \Edge(b0)(b1)
+  \Edge(a0)(b0)
+  \Edge(b2)(a2)
+  % \grEmptyCycle[RA=1,rotation=180]{6}
+  % \EdgeInGraphLoop*{a}{4}
+  % \Edge(a4)(a5)
+  \or % i=39
+  \grPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(b0)(b1)
+  \Edge(b1)(a2)
+  % \grEmptyCycle[RA=1,rotation=150]{6}
+  % \EdgeInGraphLoop{a}{5}
+  \or % i=40
+  \grPath[form=2,RA=1]{3}
+  \grPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  % \grEmptyCycle[RA=1,rotation=-240]{6}
+  % \EdgeInGraphLoop*{a}{6}
+  \or % i=41
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(a1)
+  \Edge(b0)(b1)
+  \Edge(a1)(b1)
+  \Edge(a0)(b0)
+  \Edge(b2)(a2)
+  % \grEmptyCycle[RA=1,rotation=-180]{6}
+  % \EdgeInGraphLoop{a}{4}
+  % \Edge(a4)(a5)
+  \or % i=42
+  \grEmptyPath[RA=1]{3}
+  \grEmptyPath[RA=1,prefix=b,y=1]{3}
+  \Edge(a0)(b0)
+  \Edge(a0)(a1)
+  \Edge(a0)(b1)
+  \Edge(b0)(b1)
+  \Edge(a2)(b2)
+  \or % i=43
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(a1)
+  \Edge(b0)(b1)
+  \Edge(a1)(b1)
+  \Edge(a0)(b0)
+  \Edge(a0)(b1)
+  \Edge(a1)(b0)
+  % \grEmptyCycle[RA=1,rotation=180]{6}
+  % \EdgeInGraphLoop{a}{4}
+  % \Edge(a0)(a2)
+  % \Edge(a1)(a3)
+  \or % i=44
+  \grPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(b0)(b1)
+  \Edge(b1)(a2)
+  \Edge(a1)(b1)
+  % \grEmptyCycle[RA=1,rotation=150]{6}
+  % \EdgeInGraphLoop{a}{5}
+  % \Edge(a1)(a3)
+  \or % i=45
+  \grPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(a1)(b0)
+  \Edge(a1)(b2)
+  \Edge(b2)(a2)
+  % \grEmptyCycle[RA=1,rotation=90]{6}
+  % \EdgeInGraphSeq{a}{1}{4}
+  % \Edge(a1)(a3)
+  % \Edge(a5)(a3)
+  \or % i=46
+  \grPath[form=2,RA=1]{3}
+  \grPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(a2)(b2)
+  % \grCycle[RA=1]{6}
+  \or % i=47
+  \grPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(a1)(b0)
+  \Edge(b2)(a2)
+  \Edge(b1)(b2)
+  % \grEmptyCycle[RA=1,rotation=30]{6}
+  % \EdgeInGraphLoop*{a}{6}
+  % \Edge(a0)(a2)
+  \or % i=48
+  \grPath[RA=1]{3}
+  \grPath[RA=1,prefix=b,y=1]{3}
+  \EdgeIdentity{a}{b}{2}
+  \or % i=49
+  \grPath[form=2,RA=1]{3}
+  \grPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(a1)(b0)
+  % \grEmptyCycle[RA=1]{6}
+  % \EdgeInGraphLoop*{a}{6}
+  % \Edge(a1)(a3)
+  \or % i=50
+  \grPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(a1)(b0)
+  \Edge(a1)(b1)
+  \Edge(b1)(b2)
+  % \grEmptyCycle[RA=1]{6}
+  % \EdgeInGraphLoop*{a}{5}
+  % \Edge(a2)(a4)  
+  % \Edge(a2)(a5)  
+  \or % i=51
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(a1)
+  \Edge(a0)(b0)
+  \Edge(a1)(b0)
+  \Edge(b2)(a2)
+  \Edge(b1)(b2)
+  \Edge(b1)(a2)
+  % \grEmptyCycle[RA=1,rotation=-60]{6}
+  % \EdgeInGraphLoop{a}{3}
+  % \Edge(a3)(a4)
+  % \Edge(a5)(a4)
+  % \Edge(a5)(a3)
+  \or % i=52
+  \grPath[RA=1]{3}
+  \grPath[RA=1,prefix=b,y=1]{3}
+  \EdgeIdentity{a}{b}{3}
+  \or % i=53
+  \grPath[form=2,RA=1]{3}
+  \grPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(a2)(b2)
+  \Edge(a1)(b0)
+  % \grCycle[RA=1]{6}
+  % \Edge(a2)(a4)
+  \or % i=54
+  \grPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a1)(b0)
+  \Edge(b1)(b2)
+  \EdgeIdentity{a}{b}{3}
+  % \grEmptyCycle[RA=1,rotation=180]{6}
+  % \EdgeInGraphLoop{a}{4}
+  % \Edge(a0)(a4)
+  % \Edge(a0)(a5)
+  % \Edge(a4)(a5)
+  \or % i=55
+  \grEmptyPath[RA=1]{3}
+  \grEmptyPath[RA=1,prefix=b,y=1]{3}
+  \EdgeIdentity{a}{b}{3}
+  \Edge(a0)(b1)
+  \Edge(a0)(a1)
+  \Edge(a1)(b0)
+  \Edge(b1)(b0)
+  \or % i=56
+  \grPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(b1)(b2)
+  \Edge(a0)(b0)
+  \Edge(a1)(b0)
+  \Edge(b2)(a2)
+  \Edge(b1)(a2)
+  % \grEmptyCycle[RA=1,rotation=-60]{6}
+  % \EdgeInGraphLoop{a}{3}
+  % \Edge(a3)(a4)
+  % \Edge(a5)(a4)
+  % \Edge(a5)(a3)
+  % \Edge(a5)(a0)
+  \or % i=57
+  \grPath[form=2,RA=1]{3}
+  \grPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(a1)(b0)
+  \Edge(b2)(a2)
+  \Edge(b1)(a2)
+  % \grCycle[RA=1]{6}
+  % \Edge(a1)(a5)
+  % \Edge(a2)(a4)
+  \or % i=58
+  \grPath[form=2,RA=1]{3}
+  \grPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(a1)(b0)
+  \Edge(b2)(a2)
+  \Edge(b1)(a2)
+  \Edge(a0)(b2)
+  % \grCycle[RA=1]{6}
+  % \Edge(a1)(a5)
+  % \Edge(a2)(a4)
+  % \Edge(a0)(a3)
+  \or % i=59
+  \grPath[form=2,RA=1]{3}
+  \grPath[y=1,form=2,RA=1,prefix=b]{3}
+  \EdgeIdentity{a}{b}{3}
+  \Edge(a1)(b0)
+  \Edge(b1)(a2)
+  % \grCycle[RA=1]{6}
+  % \Edge(a1)(a5)
+  % \Edge(a2)(a4)
+  % \Edge(a1)(a4)
+  \or % i=60
+  \grPath[RA=1]{3}
+  \grPath[RA=1,prefix=b,y=1]{3}
+  \EdgeIdentity{a}{b}{3}
+  \Edge(a0)(b1)
+  \Edge(b0)(a1)
+  \or % i=61
+  \grCompleteBipartite[RA=1,RB=1,RS=1]{3}{3}
+  \or % i=62
+  \grCycle[RA=1]{6}
+  \Edge(a1)(a5)
+  \Edge(a2)(a4)
+  \Edge(a3)(a5)
+  \Edge(a0)(a4)
+  \or % i=63
+  \grComplete[RA=1/2*cosec(36),rotation=90]{5}
+  \Vertex[x=1.5,y=0]{b0}
+  % \grEmptyCycle[RA=1,rotation=150]{6}
+  % \EdgeInGraphLoop{a}{5}
+  % \Edge(a0)(a2)
+  % \Edge(a0)(a3)
+  % \Edge(a1)(a3)
+  % \Edge(a1)(a4)
+  % \Edge(a2)(a4)
+  \or % i=64
+  \grCirculant[RA=1]{6}{1,2}
+  \or % i=65
+  \grComplete[RA=1]{6}
+  \fi
+  \end{tikzpicture}
+}
+
+\newcommand{\names}[1]{%
+  \setkeys[GRA]{small}{#1}%
+  \ifcase\cmdGRA@small@i
+  \or % i=1
+  $K_{1}$
+  \or % i=2
+  $2K_{1}$
+  \or % i=3
+  $K_{2}$
+  \or % i=4
+  $3K_{1}$
+  \or % i=5
+  $K_{2}\cup K_{1}$
+  \or % i=6
+  $K_{3}$
+  \or % i=7
+  $4K_{1}$
+  \or % i=8
+  $K_{2}\cup 2K_{1}$
+  \or % i=9
+  $2K_{2}$
+  \or % i=10
+  $K_{3}\cup K_{1}$
+  \or % i=11
+  $P_{3}$
+  \or % i=12
+  $C_{4}$
+  \or % i=13
+  $K_{4}$
+  \or % i=14
+  $5K_{1}$
+  \or % i=15
+  $K_{2}\cup 3K_{1}$
+  \or % i=16
+  $2K_{2}\cup K_{1}$
+  \or % i=17
+  $P_{3}\cup K_{1}$
+  \or % i=18
+  $K_{3}\cup 2K_{1}$
+  \or % i=19
+  $P_{2}\cup K_{2}$
+  \or % i=20
+  $C_{4}\cup K_{1}$
+  \or % i=21
+  $P_{4}$
+  \or % i=22
+  $K_{3}\cup K_{2}$
+  \or % i=23
+  $C_{5}$
+  \or % i=24
+  \fbox{$(5,6,1)$}
+  \or % i=25
+  $K_{4}\cup K_{1}$
+  \or % i=26
+  \fbox{$(5,6,4)$}
+  \or % i=27
+  $K_{5}$
+  \or % i=28
+  $6K_{1}$
+  \or % i=29
+  $K_{2}\cup 4K_{1}$
+  \or % i=30
+  $2K_{2}\cup 2K_{1}$
+  \or % i=31
+  $P_{3}\cup 2K_{1}$
+  \or % i=32
+  $K_{3}\cup 3K_{1}$
+  \or % i=33
+  $P_{2}\cup K_{2}\cup K_{1}$
+  \or % i=34
+  $3K_{2}$
+  \or % i=35
+  $C_{4}\cup 2K_{1}$
+  \or % i=36
+  $P_{4}\cup K_{1}$
+  \or % i=37
+  $K_{3}\cup K_{2}\cup K_{1}$
+  \or % i=38
+  $P_{3}\cup K_{2}$
+  \or % i=39
+  $C_{5}\cup K_{1}$
+  \or % i=40
+  $P_{5}$
+  \or % i=41
+  $C_{4}\cup K_{2}$
+  \or % i=42
+  \fbox{$(6,5,15)$}
+  \or % i=43
+  $K_{4}\cup 2K_{1}$
+  \or % i=44
+  \fbox{$(6,6,2)$}
+  \or % i=45
+  \fbox{$(6,6,3)$}
+  \or % i=46
+  $C_{6}$
+  \or % i=47
+  \fbox{$(6,6,10)$}
+  \or % i=48
+  \fbox{$(6,6,11)$}
+  \or % i=49
+  \fbox{$(6,6,13)$}
+  \or % i=50
+  \fbox{$(6,6,14)$}
+  \or % i=51
+  $2K_{3}$
+  \or % i=52
+  \fbox{$(6,7,5)$}
+  \or % i=53
+  \fbox{$(6,7,6)$}
+  \or % i=54
+  \fbox{$(6,7,13)$}
+  \or % i=55
+  $K_{4}\cup K_{2}$
+  \or % i=56
+  \fbox{$(6,7,23)$}
+  \or % i=57
+  \fbox{$(6,8,5)$}
+  \or % i=58
+  \fbox{$(6,9,7)$}
+  \or % i=59
+  \fbox{$(6,9,11)$}
+  \or % i=60
+  \fbox{$(6,9,16)$}
+  \or % i=61
+  $K_{3,3}$
+  \or % i=62
+  \fbox{$(6,10,7)$}
+  \or % i=63
+  $K_{5}\cup K_{1}$
+  \or % i=64
+  $O_{3}$
+  \or % i=65
+  $K_{6}$
+  \fi
+}
+%\makeatother
+
+\newcommand{\graphst}[2]{%
+  \setkeys[GRA]{small}{#1}%
+  \begin{tikzpicture}[scale=#2]
+  \ifcase\cmdGRA@small@i
+  \or % i=1
+  \Vertex[x=0,y=0]{a0}
+  \or % i=2
+  \grEmptyPath[RA=1]{2}
+  \or % i=3
+  \grPath[RA=1]{2}
+  \or % i=4
+  \grEmptyPath[RA=1]{3}
+  \or % i=5
+  \grPath[form=2,rotation=90,RA=1]{2}
+  \Vertex[x=1,y=0]{a2}
+  \or % i=6
+  \grComplete[RA=1/(1+cos(60)),rotation=90]{3}
+  \or % i=7
+  \grEmptyCycle[RA=1/sqrt(2),rotation=45]{4}
+  \or % i=8
+  \grPath[form=2,rotation=90,RA=1]{2}
+  \grEmptyPath[form=2,x=1,prefix=b,rotation=90,RA=1]{2}
+  \or % i=9
+  \grPath[form=2,rotation=90,RA=1]{2}
+  \grPath[form=2,x=1,prefix=b,rotation=90,RA=1]{2}
+  \or % i=10
+  \grEmptyCycle[RA=1/sqrt(2),rotation=45]{4}
+  \EdgeInGraphLoop{a}{3}
+  \or % i=11
+  \grEmptyCycle[RA=1/sqrt(2),rotation=45]{4}
+  \EdgeInGraphLoop*{a}{4}
+  \or % i=12
+  \grCycle[RA=1/sqrt(2),rotation=45]{4}
+  \or % i=13
+  \grComplete[RA=1/sqrt(2),rotation=45]{4}
+  \or % i=14
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1]{2}
+  \or % i=15
+  \grPath[form=2,y=1,RA=1]{2}
+  \grEmptyPath[form=2,RA=1]{3}
+  \or % i=16
+  \grPath[RA=1,form=2,rotation=90]{2}
+  \grPath[RA=1,form=2,x=1,y=0,prefix=b,rotation=90]{2}
+  \Vertex[x=2,y=0]{c0}
+  \or % i=17
+  \grPath[RA=1,form=2,rotation=90]{2}
+  \grEmptyPath[RA=1,form=2,x=1,y=0,prefix=b,rotation=90]{2}
+  \EdgeIdentity{a}{b}{2}
+  \Vertex[x=2,y=0]{c0}
+  \or % i=18
+  \grEmptyPath[RA=1,form=2,rotation=90]{2}
+  \grPath[RA=1,form=2,x=1,y=0,prefix=b,rotation=90]{2}
+  \Vertex[x=2,y=0]{c0}
+  \EdgeFromOneToAll{c}{b}{0}{2}
+  \or % i=19
+  \grPath[form=2,RA=1]{3}
+  \grPath[form=2,RA=1,y=1,prefix=b]{2}
+  \or % i=20
+  \grPath[RA=1,form=2,rotation=90]{2}
+  \grPath[RA=1,form=2,x=1,y=0,prefix=b,rotation=90]{2}
+  \EdgeIdentity{a}{b}{2}
+  \Vertex[x=2,y=0]{c0}
+  \or % i=21
+  \grEmptyPath[RA=1,form=2,rotation=90]{2}
+  \grEmptyPath[RA=1,form=2,x=1,y=0,prefix=b,rotation=90]{2}
+  \EdgeIdentity{a}{b}{2}
+  \Vertex[x=2,y=0]{c0}
+  \EdgeFromOneToAll{c}{b}{0}{2}
+  \or % i=22
+  \grPath[RA=1,form=2,rotation=90]{2}
+  \grPath[RA=1,form=2,x=1,y=0,prefix=b,rotation=90]{2}
+  \Vertex[x=2,y=0]{c0}
+  \EdgeFromOneToAll{c}{b}{0}{2}
+  \or % i=23
+  \grPath[form=2,RA=1]{3}
+  \grPath[form=2,RA=1,y=1,prefix=b]{2}
+  \Edge(a0)(b0)
+  \Edge(a2)(b1)
+  \or % i=24
+  \grPath[RA=1,form=2,rotation=90]{2}
+  \grPath[RA=1,form=2,x=2,y=0,prefix=b,rotation=90]{2}
+  \Vertex[x=1,y=0]{c0}
+  \EdgeFromOneToAll{c}{b}{0}{2}
+  \EdgeFromOneToAll{c}{a}{0}{2}
+  \or % i=25
+  \grPath[RA=1,form=2,rotation=90]{2}
+  \grPath[RA=1,form=2,x=1,y=0,prefix=b,rotation=90]{2}
+  \EdgeIdentity{a}{b}{2}
+  \Edge(a0)(b1)
+  \Edge(a1)(b0)
+  \Vertex[x=2,y=0]{c0}
+  \or % i=26
+  \grPath[RA=1,form=2,rotation=90]{2}
+  \grPath[RA=1,form=2,x=1,y=0,prefix=b,rotation=90]{2}
+  \EdgeIdentity{a}{b}{2}
+  \Vertex[x=2,y=0]{c0}
+  \EdgeFromOneToAll{c}{b}{0}{2}
+  \or % i=27
+  \grComplete[RA=1/2*cosec(36),rotation=90]{5}
+  \or % i=28
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1]{3}
+  \or % i=29
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \or % i=30
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(a1)(b1)
+  \or % i=31
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(a1)
+  \Edge(a0)(b0)
+  \Edge(b0)(b1)
+  \or % i=32
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(a1)
+  \Edge(a0)(b0)
+  \Edge(b0)(a1)
+  \or % i=33
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(a1)
+  \Edge(a0)(b0)
+  \Edge(b2)(a2)
+  \or % i=34
+  \grEmptyPath[RA=1]{3}
+  \grEmptyPath[RA=1,prefix=b,y=1]{3}
+  \EdgeIdentity{a}{b}{3}
+  \or % i=35
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(a1)
+  \Edge(a0)(b0)
+  \Edge(b0)(b1)
+  \Edge(a1)(b1)
+  \or % i=36
+  \grPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(b0)(b1)
+  \or % i=37
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(a1)
+  \Edge(a0)(b0)
+  \Edge(a1)(b0)
+  \Edge(b2)(a2)
+  \or % i=38
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(a1)
+  \Edge(b0)(b1)
+  \Edge(a0)(b0)
+  \Edge(b2)(a2)
+  \or % i=39
+  \grPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(b0)(b1)
+  \Edge(b1)(a2)
+  \or % i=40
+  \grPath[form=2,RA=1]{3}
+  \grPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \or % i=41
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(a1)
+  \Edge(b0)(b1)
+  \Edge(a1)(b1)
+  \Edge(a0)(b0)
+  \Edge(b2)(a2)
+  \or % i=42
+  \grEmptyPath[RA=1]{3}
+  \grEmptyPath[RA=1,prefix=b,y=1]{3}
+  \Edge(a0)(b0)
+  \Edge(a0)(a1)
+  \Edge(a0)(b1)
+  \Edge(b0)(b1)
+  \Edge(a2)(b2)
+  \or % i=43
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(a1)
+  \Edge(b0)(b1)
+  \Edge(a1)(b1)
+  \Edge(a0)(b0)
+  \Edge(a0)(b1)
+  \Edge(a1)(b0)
+  \or % i=44
+  \grPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(b0)(b1)
+  \Edge(b1)(a2)
+  \Edge(a1)(b1)
+  \or % i=45
+  \grPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(a1)(b0)
+  \Edge(a1)(b2)
+  \Edge(b2)(a2)
+  \or % i=46
+  \grPath[form=2,RA=1]{3}
+  \grPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(a2)(b2)
+  \or % i=47
+  \grPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(a1)(b0)
+  \Edge(b2)(a2)
+  \Edge(b1)(b2)
+  \or % i=48
+  \grPath[RA=1]{3}
+  \grPath[RA=1,prefix=b,y=1]{3}
+  \EdgeIdentity{a}{b}{2}
+  \or % i=49
+  \grPath[form=2,RA=1]{3}
+  \grPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(a1)(b0)
+  \or % i=50
+  \grPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(a1)(b0)
+  \Edge(a1)(b1)
+  \Edge(b1)(b2)
+  \or % i=51
+  \grEmptyPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(a1)
+  \Edge(a0)(b0)
+  \Edge(a1)(b0)
+  \Edge(b2)(a2)
+  \Edge(b1)(b2)
+  \Edge(b1)(a2)
+  \or % i=52
+  \grPath[RA=1]{3}
+  \grPath[RA=1,prefix=b,y=1]{3}
+  \EdgeIdentity{a}{b}{3}
+  \or % i=53
+  \grPath[form=2,RA=1]{3}
+  \grPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(a2)(b2)
+  \Edge(a1)(b0)
+  \or % i=54
+  \grPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a1)(b0)
+  \Edge(b1)(b2)
+  \EdgeIdentity{a}{b}{3}
+  \or % i=55
+  \grEmptyPath[RA=1]{3}
+  \grEmptyPath[RA=1,prefix=b,y=1]{3}
+  \EdgeIdentity{a}{b}{3}
+  \Edge(a0)(b1)
+  \Edge(a0)(a1)
+  \Edge(a1)(b0)
+  \Edge(b1)(b0)
+  \or % i=56
+  \grPath[form=2,RA=1]{3}
+  \grEmptyPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(b1)(b2)
+  \Edge(a0)(b0)
+  \Edge(a1)(b0)
+  \Edge(b2)(a2)
+  \Edge(b1)(a2)
+  \or % i=57
+  \grPath[form=2,RA=1]{3}
+  \grPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(a1)(b0)
+  \Edge(b2)(a2)
+  \Edge(b1)(a2)
+  \or % i=58
+  \grPath[form=2,RA=1]{3}
+  \grPath[y=1,form=2,RA=1,prefix=b]{3}
+  \Edge(a0)(b0)
+  \Edge(a1)(b0)
+  \Edge(b2)(a2)
+  \Edge(b1)(a2)
+  \Edge(a0)(b2)
+  \or % i=59
+  \grPath[form=2,RA=1]{3}
+  \grPath[y=1,form=2,RA=1,prefix=b]{3}
+  \EdgeIdentity{a}{b}{3}
+  \Edge(a1)(b0)
+  \Edge(b1)(a2)
+  \or % i=60
+  \grPath[RA=1]{3}
+  \grPath[RA=1,prefix=b,y=1]{3}
+  \EdgeIdentity{a}{b}{3}
+  \Edge(a0)(b1)
+  \Edge(b0)(a1)
+  \or % i=61
+  \grCompleteBipartite[RA=1,RB=1,RS=1]{3}{3}
+  \or % i=62
+  \grCycle[RA=1]{6}
+  \Edge(a1)(a5)
+  \Edge(a2)(a4)
+  \Edge(a3)(a5)
+  \Edge(a0)(a4)
+  \or % i=63
+  \grComplete[RA=1/2*cosec(36),rotation=90]{5}
+  \Vertex[x=1.5,y=0]{b0}
+  \or % i=64
+  \grCirculant[RA=1]{6}{1,2}
+  \or % i=65
+  \grComplete[RA=1]{6}
+  \fi
+  \end{tikzpicture}
+}

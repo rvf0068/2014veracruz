@@ -1,0 +1,43 @@
+\documentclass[beamer]{standalone}
+
+%\usepackage{pgffor}
+
+\input{../veracruz.sty}
+\makeatletter
+\input{code-graphs}
+\makeatother
+
+\SetVertexSimple[FillColor=gray, MinSize=1pt, InnerSep=1pt, LineWidth=0.5pt]
+%\renewcommand{\VertexSmallMinSize}{1pt}
+
+\tikzset{EdgeStyle/.style= {%
+    color           = white,
+    double          = black,
+    double distance = 0.5pt}}
+
+\setlength{\fboxsep}{1pt}
+
+\begin{document}
+\begin{standaloneframe}
+  \tiny
+  \begin{center}
+  \foreach \m in {1,...,7}{%
+    \pgfmathsetcounter{nstart}{9*\m-8}
+    \pgfmathsetcounter{nend}{9*\m}
+    \foreach \n in {\thenstart,...,\thenend}{%
+      \begin{minipage}{0.10\linewidth}
+        \centering
+        \graphs{i=\n}\\ \names{i=\n}
+      \end{minipage}
+    }
+    \medskip
+  }
+  \foreach \n in {64,65}{%
+      \begin{minipage}{0.10\linewidth}
+        \centering
+        \graphs{i=\n}\\ \names{i=\n}
+      \end{minipage}
+    }
+\end{center}
+\end{standaloneframe}
+\end{document}

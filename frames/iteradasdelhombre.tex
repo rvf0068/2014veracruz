@@ -1,0 +1,32 @@
+\documentclass[beamer]{standalone}
+
+\input{../veracruz.sty}
+
+\begin{document}
+\begin{standaloneframe}
+  \begin{center}
+    \begin{tikzpicture}
+      \pgfmathsetmacro{\edgel}{1.8}
+      \pgfmathsetmacro{\rad}{\edgel/sqrt(2)}
+      \grMan[RA=\rad]
+      \graphcaption{0}{-2*\edgel}{$G$}
+      \uncover<2->{%
+        \grCliqueGraphOfMan[prefix=b,x=1.5*\edgel,RA=\rad]
+        \graphcaption{1.5*\edgel}{-2*\edgel}{$K(G)$}
+      }
+      \uncover<3->{%
+        \grPath[prefix=c,x=2.5*\edgel,form=2,rotation=90,RA=\rad]{3}
+        \graphcaption{2.5*\edgel}{-2*\edgel}{$K^{2}(G)$}
+      }
+      \uncover<4->{%
+        \grPath[prefix=d,x=3.5*\edgel,form=2,rotation=90,RA=\rad]{2}
+        \graphcaption{3.5*\edgel}{-2*\edgel}{$K^{3}(G)$}
+      }
+      \uncover<5->{%
+        \Vertex[x=4.5*\edgel,y=0]{e0} % I have to explicitly include y=0
+        \graphcaption{4.5*\edgel}{-2*\edgel}{$K^{4}(G)$}
+      }
+    \end{tikzpicture}
+  \end{center}
+\end{standaloneframe}
+\end{document}

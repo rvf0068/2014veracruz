@@ -1,0 +1,22 @@
+\documentclass[beamer]{standalone}
+
+\input{../veracruz.sty}
+
+\begin{document}
+
+\begin{standaloneframe}[plain]
+  \definframe{Gráfica divergente}
+
+  Si el conjunto \hfill \uncover<2>{%
+    \begin{tikzpicture}[scale=0.4]
+      \SetVertexSimple[FillColor=gray, MinSize=3pt, LineWidth=.5pt]
+      \grOctahedron[RA=1]{3}
+    \end{tikzpicture}}
+  \begin{equation*}
+    \setof{|K^{n}(G)|}{n=0,1,2,\ldots}
+  \end{equation*}
+  no está acotado superiormente, $G$ es \alert{divergente}.
+
+\end{standaloneframe}
+
+\end{document}

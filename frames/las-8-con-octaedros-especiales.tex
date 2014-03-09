@@ -1,0 +1,38 @@
+\documentclass[beamer]{standalone}
+
+\input{../veracruz.sty}
+
+\begin{document}
+
+\SetVertexSimple[FillColor=gray, MinSize=1pt, InnerSep=2pt, LineWidth=0.5pt]
+
+\tikzset{EdgeStyle/.style= {%
+    color           = white,
+    double          = black,
+    double distance = 0.5pt}}
+
+\setlength{\fboxsep}{1pt}
+
+\begin{standaloneframe}
+  \scriptsize
+  \begin{center}
+    \foreach \n in {20,35,39,41}{%
+      \begin{minipage}{0.22\linewidth}
+        \centering
+        \graphst{i=\n}{0.6}\\ \names{i=\n}
+      \end{minipage}
+    }
+    \bigskip
+
+    \foreach \n in {44,52,54,58}{%
+      \begin{minipage}{0.22\linewidth}
+        \centering
+        \graphst{i=\n}{0.6}\\ \names{i=\n}
+      \end{minipage}
+    }
+    \bigskip
+
+    8 gráficas tal que cualquier extensión es divergente
+  \end{center}
+\end{standaloneframe}
+\end{document}

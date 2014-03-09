@@ -1,0 +1,130 @@
+#+title: Clan comportamiento de gráficas con vecindad pequeña
+#+author: Rafael Villarroel Flores, UAEH\\[-0.5em]\scriptsize\textsl{Trabajo conjunto con Paco Larrión y Miguel Pizaña}
+#+options: toc:nil 
+#+date: \textsc{\small XXIX Coloquio Víctor Neumann-Lara}\\[-0.5em] 13 de marzo de 2014
+
+#+startup: beamer
+#+latex_class: beamer
+#+latex_class_options: [spanish,mexico]
+#+latex_header: \usepackage{veracruz}
+
+* Nuestras gráficas
+#+latex: \input{frames/nuestrasgraficas}
+
+* TODO Completas
+#+latex: \input{frames/completas}
+
+* Clanes
+#+latex: \input{frames/clanes}
+
+* La gráfica de clanes
+#+latex: \input{frames/graficadeclanes}
+
+* Gráficas iteradas de clanes
+#+latex: \input{frames/graficasiteradasdeclanes}
+
+* Iteradas del hombre
+#+latex: \input{frames/iteradasdelhombre}
+
+* Iteradas del octaedro
+#+latex: \input{frames/graficasiteradas-octaedros}
+
+* Gráfica divergente
+#+latex: \input{frames/graficadivergente}
+
+* Gráfica convergente
+#+latex: \input{frames/graficaconvergente}
+
+* Gráficas Helly
+#+latex: \input{frames/graficahelly}
+
+* Escalante
+#+latex: \input{frames/escalante}
+
+* Retractos
+#+latex: \input{frames/retracto}
+
+* Neumann-Lara
+#+latex: \input{frames/neumannlara}
+
+* Clan comportamiento
+#+latex: \input{frames/clan-comportamiento}
+
+* Neumann-Lara
+#+latex: \input{frames/extensiones}
+
+* Ejemplo localmente \(P_{3}\)
+#+latex: \input{frames/localmente-p3}
+
+* Ejemplo localmente \(P_{4}\)
+#+latex: \input{frames/localmente-p4}
+
+* Teorema
+#+latex: \input{frames/teorema-localmente-chicas}
+
+* Artículo de Hall
+#+latex: \input{frames/hall}
+
+* Las 65
+#+BEGIN_LaTeX
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[xshift=0cm,yshift=0cm] at (current page.center) {%
+      \includegraphics[width=\paperwidth]{./frames/las-65.pdf}
+    };
+  \end{tikzpicture}  
+#+END_LaTeX
+
+* Cuello local
+#+latex: \input{frames/cuello-local}
+
+* Teorema de cuello local grande
+#+latex: \input{frames/teorema-cuello-local}
+
+* 24 de cuello local grande
+#+BEGIN_LaTeX
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[xshift=0cm,yshift=0cm] at (current page.center) {%
+      \includegraphics[width=\paperwidth]{./frames/las-24-cuello-local-grande.pdf}
+    };
+  \end{tikzpicture}  
+#+END_LaTeX
+
+* 14 casos especiales
+#+latex: \input{frames/casos-especiales}
+
+* Aristas con extremo dominado
+#+latex: \input{frames/extremo-dominado}
+
+* Teorema sobre extremo dominado
+#+latex: \input{frames/teorema-extremo-dominado}
+
+* 13 con extremo dominado
+#+latex: \input{frames/las-13-extremo-dominado}
+
+* Teoremas sobre octaedros especiales
+#+latex: \input{frames/octaedros-especiales}
+
+* 8 con octaedros especiales
+#+latex: \input{frames/las-8-con-octaedros-especiales}
+
+* 6 gráficas restantes
+#+latex: \input{frames/las-6-restantes}
+
+* Cubo chato
+#+latex: \input{frames/cubo-chato}
+
+* Cubo chato 2
+#+latex: \input{frames/cubo-chato-dos}
+
+* Ejemplos
+
+  Tenemos un ejemplo de una gráfica \(L\) de 9 vértices, con dos
+  extensiones \(G_{1}\), \(G_{2}\), tales que \(G_{1}\) es convergente
+  y \(G_{2}\) es divergente. 
+
+* Final
+#+begin_center
+#+begin_huge
+¡Gracias!
+#+end_huge
+#+end_center

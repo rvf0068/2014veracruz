@@ -1,0 +1,55 @@
+\documentclass[beamer]{standalone}
+
+\input{../veracruz.sty}
+
+\begin{document}
+
+\begin{standaloneframe}
+
+  \vspace{\fill}
+  
+  \uncover<1->{%
+    \begin{minipage}{0.6\linewidth}
+      Una colección $\mathcal{C}$ de subconjuntos de $X$ es
+      \alert{intersecante} si $Q_{1},Q_{2}\in\mathcal{C}$ implica
+      $Q_{1}\cap Q_{2}\ne\emptyset$.
+    \end{minipage}}%
+  \uncover<2->{%
+    \begin{minipage}{0.4\linewidth}
+      \centering
+      \scriptsize
+      $\mathcal{C}=\{\{1,2\},\{1,3\},\{2,3\}\}$
+    \end{minipage}}
+
+  \vspace{\fill}
+
+  \uncover<3->{%
+    \begin{minipage}{0.6\linewidth}
+      Una gráfica $G$ es \alert{Helly} si cualquier colección
+      $\mathcal{C}$ intersecante de clanes es tal que
+      $\cap\mathcal{C}\ne\emptyset$. 
+    \end{minipage}}%
+  \uncover<4->{%
+    \begin{minipage}{0.4\linewidth}
+      \centering
+        \begin{tikzpicture}[scale=0.5]
+          \grPath[RA=1.8,prefix=a,form=2]{3}
+          \grPath[RA=1.8,prefix=b,form=2,y=1.8]{2}
+          \grPath[RA=1.8,prefix=c,form=2,y=3.6]{1}
+
+          \Edges(a0,b0,c0,b1,a2)
+          \Edges(b0,a1,b1)
+
+          \only<5>{%
+            \triangulo{a0}{a1}{b0}{blue}
+            \triangulo{a2}{a1}{b1}{green}
+            \triangulo{b0}{b1}{c0}{red}}
+          \uncover<6->{\graphcaption{0}{-1.5}{\small No Helly}}
+        \end{tikzpicture}
+    \end{minipage}}
+
+  \vspace{\fill}
+
+\end{standaloneframe}
+
+\end{document}

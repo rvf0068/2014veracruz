@@ -1,0 +1,64 @@
+\usetheme{naked}
+\setbeamercolor{alerted text}{fg=green!50!black}
+\setbeamercolor{box title}{fg=purple}
+\setbeamertemplate{frametitle}{}
+
+% \usepackage{xkeyval}
+% \usepackage{pgffor}
+
+\usepackage{standalone}
+
+\makeatletter
+\input{code-graphs}
+\makeatother
+
+% vertical centering of cells
+% see http://tex.stackexchange.com/questions/46386/vertically-center-cells-of-a-table
+\usepackage{array}% http://ctan.org/pkg/array
+\newcolumntype{M}{>{\centering\arraybackslash}m{\dimexpr.17\linewidth-2\tabcolsep}}
+
+% remove space between margin and lists
+\usepackage{enumitem}
+\setitemize{label=\usebeamerfont*{itemize item}%
+  \usebeamercolor[fg]{itemize item}
+  \usebeamertemplate{itemize item}}
+\setlist{leftmargin=*,labelindent=0cm}
+
+%\usepackage{amsmath}
+
+\usepackage{tikz}
+\usepackage{tkz-graph}
+\usepackage{tkz-berge}
+\usepackage{tkz-berge-add}
+
+\usepackage[utf8]{inputenc}
+% \usepackage{libertine}
+% \usepackage[libertine]{newtxmath}
+
+%\usepackage{lxfonts}
+
+\usepackage{cabin}
+\usepackage{mathastext}
+
+\newcommand{\graphcaption}[4][gray!80!white]{\draw (#2,#3) node [fill=#1]{#4};}
+
+\SetVertexSimple[FillColor=gray, MinSize=10pt, LineWidth=1.5pt]
+
+\tikzset{EdgeStyle/.style= {%
+    color           = white,
+    double          = black,
+    double distance = 2.5pt}}
+
+\newcommand{\setof}[2]{\left\{\,#1\mid #2\,\right\}}
+
+\newcommand{\triangulo}[4]{%
+  \shadedraw[inner color=#4,opacity=0.8,line width=1pt]
+  (#1.center) -- (#2.center) -- (#3.center) -- cycle;}
+
+\newcommand{\triangleshaded}[3]{%
+  \draw[fill=gray]
+  (#1.center) -- (#2.center) -- (#3.center) -- cycle;}
+
+\newcommand{\triang}[3]{%
+  \shadedraw[inner color=gray,,opacity=0.8,line width=1pt]
+  (#1.center) -- (#2.center) -- (#3.center) -- cycle;}

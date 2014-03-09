@@ -1,0 +1,53 @@
+\documentclass[beamer]{standalone}
+
+\input{../veracruz.sty}
+
+\begin{document}
+\begin{standaloneframe}
+  \begin{center}
+    \begin{tikzpicture}[scale=0.8]
+      \grCycle[RA=1,prefix=a]{4}
+      \grEmptyCycle[RA=2,prefix=b]{4}
+      \grEmptyCycle[RA=3,prefix=d]{4}
+      \begin{scope}[rotate=45]
+        \grEmptyCycle[RA=2,prefix=c]{4}
+        \grEmptyCycle[RA=3,prefix=e]{4}
+        \grCycle[RA=5,prefix=f]{4}
+      \end{scope}
+      \EdgeIdentity{b}{a}{4}
+      \EdgeIdentity{b}{c}{4}
+      \EdgeIdentity{b}{e}{4}
+      \EdgeIdentity{a}{c}{4}
+      \EdgeIdentity{b}{d}{4}
+      \EdgeIdentity{d}{e}{4}
+      \EdgeIdentity{c}{e}{4}
+      \EdgeIdentity{d}{f}{4}
+      \EdgeIdentity{e}{f}{4}
+      \EdgeMod{c}{b}{4}{1}
+      \EdgeMod{e}{d}{4}{1}
+      \EdgeMod{f}{d}{4}{1}
+      \EdgeMod{a}{c}{4}{3}
+      \uncover<2-4>{\AddVertexColor{red}{a0}}
+      \uncover<3-4>{\AddVertexColor{orange}{a3,c3,b0,c0,a1}}
+      \uncover<4>{{%
+          \SetUpEdge[lw=5pt,color=blue]
+          \Edge(a3)(c3)
+          \Edge(b0)(c3)
+          \Edge(b0)(c0)
+          \Edge(c0)(a1)
+        }}
+      \uncover<5-7>{\AddVertexColor{red}{d2}}
+      \uncover<6-7>{\AddVertexColor{orange}{b2,e2,f2,f1,e1}}
+      \uncover<7>{{%
+          \SetUpEdge[lw=5pt,color=blue]
+          \Edge(b2)(e2)
+          \Edge(e2)(f2)
+          \Edge(f2)(f1)
+          \Edge(f1)(e1)
+          }}
+      \uncover<8>{\draw (0,-4) node [fill=orange!80!white,below]{Gráfica
+        localmente $P_{4}$};}
+    \end{tikzpicture}
+  \end{center}  
+\end{standaloneframe}
+\end{document}

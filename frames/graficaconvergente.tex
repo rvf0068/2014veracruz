@@ -1,0 +1,20 @@
+\documentclass[beamer]{standalone}
+
+\input{../veracruz.sty}
+
+\begin{document}
+
+\begin{standaloneframe}[plain]
+  \definframe{Gráfica convergente}
+
+  Si $G$ no es divergente, entonces es \alert{convergente}.\hfill
+  \uncover<2>{%
+  \begin{tikzpicture}
+    \pgfmathsetmacro{\edgel}{0.6}
+    \pgfmathsetmacro{\rad}{\edgel/sqrt(2)}
+    \SetVertexSimple[FillColor=gray, MinSize=3pt, LineWidth=.5pt]
+    \grHouseX[RA=\rad]
+  \end{tikzpicture}}
+\end{standaloneframe}
+
+\end{document}

@@ -1,0 +1,41 @@
+\documentclass[beamer]{standalone}
+
+\input{../veracruz.sty}
+
+\begin{document}
+\begin{standaloneframe}
+   \begin{center}
+    \begin{tikzpicture}
+      \grCirculant[RA=2.5]{8}{1,2}
+      \uncover<1-3>{\AddVertexColor{red}{a2}}
+      \uncover<2,3>{\AddVertexColor{green}{a0,a1,a3,a4}}
+      \uncover<3>{%
+        \SetUpEdge[lw=5pt,color=blue]
+        \Edge(a0)(a1)
+        \Edge(a1)(a3)
+        \Edge(a3)(a4)
+        }
+      \uncover<4>{
+        \AddVertexColor{red}{a5}
+        \AddVertexColor{green}{a3,a4,a6,a7}
+        {\SetUpEdge[lw=5pt,color=blue]
+          \Edge(a3)(a4)
+          \Edge(a6)(a4)
+          \Edge(a6)(a7)
+        }
+      }
+      \uncover<5>{
+        \AddVertexColor{red}{a0}
+        \AddVertexColor{green}{a1,a2,a6,a7}
+        {\SetUpEdge[lw=5pt,color=blue]
+          \Edge(a1)(a2)
+          \Edge(a7)(a1)
+          \Edge(a6)(a7)
+        }
+      }
+      \uncover<6>{\draw (0,-3) node [fill=orange!80!white,below]{Gráfica
+        localmente $P_{3}$};}
+    \end{tikzpicture}
+  \end{center} 
+\end{standaloneframe}
+\end{document}

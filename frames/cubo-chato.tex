@@ -1,0 +1,112 @@
+\documentclass[beamer]{standalone}
+
+\input{../veracruz.sty}
+
+\begin{document}
+\begin{standaloneframe}
+    \begin{center}
+    \setxyzvec[18]
+    \begin{tikzpicture}
+      \newcommand{\rota}{30}
+      \newcommand{\smang}{12}
+      \newcommand{\smheig}{0.5}
+      \only<1-2>{%
+        \grCycle[RA=2*sqrt(2),rotation=\rota,prefix=a]{4}
+        \begin{scope}[xyplane=4]
+          \grEmptyCycle[RA=2*sqrt(2),rotation=\rota,prefix=b]{4}
+        \end{scope}
+        \EdgeIdentity{a}{b}{4}{}{}{}
+        \EdgeInGraphLoop{b}{4}}
+      \uncover<2->{%
+        \begin{scope}[xyplane=-\smheig]
+          \grEmptyCycle[RA=1.5*sqrt(2),rotation=\rota,prefix=c]{4}
+        \end{scope}
+        \begin{scope}[xyplane=\smheig]
+          \grEmptyCycle[RA=2.5*sqrt(2),rotation=\rota-\smang,prefix=e]{4}
+          \grEmptyCycle[RA=2.5*sqrt(2),rotation=\rota+\smang,prefix=g]{4}    
+        \end{scope}
+        \begin{scope}[xyplane=4.5+\smheig]
+          \grEmptyCycle[RA=1.5*sqrt(2),rotation=\rota,prefix=d]{4}
+        \end{scope}
+        \begin{scope}[xyplane=4.5-\smheig]
+          \grEmptyCycle[RA=2.5*sqrt(2),rotation=\rota-\smang,prefix=f]{4}
+          \grEmptyCycle[RA=2.5*sqrt(2),rotation=\rota+\smang,prefix=h]{4}
+        \end{scope}
+        \foreach\y in {0,...,3}{%
+          \Edges(c\y,e\y,g\y,c\y)
+          \Edges(d\y,f\y,h\y,d\y)
+        }}
+      \uncover<4->{%
+        \EdgeInGraphLoop{c}{4}
+        \EdgeInGraphLoop{d}{4}
+        \Edge(e0)(g0)
+        \EdgeMod{g}{e}{4}{1}
+        \EdgeMod{h}{f}{4}{1}
+        \Edge(d3)(h3)
+        \Edge(d3)(d0)
+        \EdgeIdentity{e}{f}{4}
+        \EdgeIdentity{g}{h}{4}
+        \Edge(f1)(h0)
+        \Edge(d0)(d1)
+        \Edge(d2)(d1)
+        \Edge(d3)(h3)
+        \Edge(h3)(f0)
+        \Edge(g1)(c1)
+        \Edge(g0)(e1)
+        \Edge(e1)(f1)
+      }
+      \uncover<5->{%
+        \EdgeMod{g}{c}{4}{1}
+        \Edge(e0)(f0)
+        \Edge(e0)(g0)
+        \Edge(g0)(h0)
+        \Edge(e1)(f1)
+        \EdgeIdentity{e}{h}{4}
+        \Edge(f1)(h0)
+        \Edge(d0)(d1)
+        \EdgeMod{d}{f}{4}{1}
+        \Edge(h3)(d3)
+      }
+      \uncover<6->{%
+        \Edge(c1)(c3)
+        \Edge(c0)(c2)
+
+        \Edge(g0)(e1)
+        \Edge(g0)(h0)
+        \Edge(e0)(h0)
+        \Edge(e0)(f0)
+        \Edge(e0)(g0)
+
+        \Edge(g1)(f2)
+        \Edge(e2)(h1)
+
+        \Edge(e1)(h1)
+        \Edge(e1)(f1)
+        \Edge(h0)(f1)
+        \Edge(d0)(f1)
+        \Edge(d0)(d1)
+        \Edge(d2)(d1)
+        \Edge(f1)(d1)
+
+        \Edge(g2)(f3)
+        \Edge(h2)(e3)
+
+        \Edge(f0)(d0)
+        \Edge(f0)(d3)
+        \Edge(f0)(h0)
+        \Edge(f0)(h3)
+        \Edge(h3)(d3)
+        \Edge(d0)(d3)
+      }
+      \uncover<7->{%
+        \Edge(h0)(e1)
+        \Edge(g0)(f1)
+        \Edge(e0)(h3)
+        \Edge(f0)(g3)
+        \Edge(d0)(d2)
+        \Edge(d1)(d3)
+      }
+    \end{tikzpicture}
+  \end{center}
+\end{standaloneframe}
+\end{document}

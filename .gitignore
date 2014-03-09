@@ -1,0 +1,6 @@
+/localmente-chicas.pdf
+*.nav
+*.out
+*.snm
+frames/*.pdf
+/localmente-chicas.tex
