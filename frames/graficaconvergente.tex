@@ -8,13 +8,24 @@
   \definframe{Gráfica convergente}
 
   Si $G$ no es divergente, entonces es \alert{convergente}.\hfill
-  \uncover<2>{%
-  \begin{tikzpicture}
-    \pgfmathsetmacro{\edgel}{0.6}
-    \pgfmathsetmacro{\rad}{\edgel/sqrt(2)}
-    \SetVertexSimple[FillColor=gray, MinSize=3pt, LineWidth=.5pt]
-    \grHouseX[RA=\rad]
-  \end{tikzpicture}}
+  \uncover<2->{%
+    \begin{tikzpicture}
+      \pgfmathsetmacro{\edgel}{0.6}
+      \pgfmathsetmacro{\rad}{\edgel/sqrt(2)}
+      \SetVertexSimple[FillColor=gray, MinSize=3pt, LineWidth=.5pt]
+      \grHouseX[RA=\rad]
+    \end{tikzpicture}}
+
+  \bigskip
+
+  \uncover<3->{%
+    \begin{small}
+      \begin{itemize}
+      \item Si $K^{n}(G)$ es un vértice, decimos que $G$ es \alert{nula}.
+      \item<4-> Si $K(G)\cong G$, decimos que $G$ es \alert{autóclana}.
+      \end{itemize}
+    \end{small}
+  }
 \end{standaloneframe}
 
 \end{document}
