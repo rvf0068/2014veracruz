@@ -75,13 +75,7 @@
 #+latex: \input{frames/teorema-cuello-local}
 
 * 24 de cuello local grande
-#+BEGIN_LaTeX
-  \begin{tikzpicture}[remember picture,overlay]
-    \node[xshift=0cm,yshift=0cm] at (current page.center) {%
-      \includegraphics[width=\paperwidth]{./frames/las-24-cuello-local-grande.pdf}
-    };
-  \end{tikzpicture}  
-#+END_LaTeX
+#+latex: \input{frames/las-24-cuello-local-grande}
 
 * 14 casos especiales
 #+latex: \input{frames/casos-especiales}
