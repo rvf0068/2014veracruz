@@ -4,18 +4,21 @@
 
 \begin{document}
 
-\SetVertexSimple[FillColor=gray, MinSize=1pt, InnerSep=2pt, LineWidth=0.5pt]
-
-\tikzset{EdgeStyle/.style= {%
-    color           = white,
-    double          = black,
-    double distance = 0.5pt}}
-
-\setlength{\fboxsep}{1pt}
-
 \begin{standaloneframe}
+  \SetVertexSimple[FillColor=gray, MinSize=1pt, InnerSep=2pt, LineWidth=0.5pt]
+
+  \tikzset{EdgeStyle/.style= {%
+      color           = white,
+      double          = black,
+      double distance = 0.5pt}}
+
+  \setlength{\fboxsep}{1pt}
+
   \scriptsize
   \begin{center}
+    6 gráficas restantes
+    \bigskip
+    
     \foreach \n in {47,48,49}{%
       \begin{minipage}{0.3\linewidth}
         \centering
@@ -31,12 +34,11 @@
       \end{minipage}
     }
     \bigskip
-
-    6 gráficas restantes
   \end{center}
   
   \pause
 
+  \footnotesize
   \begin{itemize}
   \item Las gráficas \names{i=47}, \names{i=49}, \names{i=50} y
     \names{i=56} son tales que toda extensión de ellas es Helly, por

@@ -4,17 +4,18 @@
 
 \begin{document}
 
-\SetVertexSimple[FillColor=gray, MinSize=1pt, InnerSep=2pt, LineWidth=0.5pt]
-
-\tikzset{EdgeStyle/.style= {%
-    color           = white,
-    double          = black,
-    double distance = 0.5pt}}
-
-\setlength{\fboxsep}{1pt}
-
 \begin{standaloneframe}
-  \tiny
+
+  \SetVertexSimple[FillColor=gray, MinSize=1pt, InnerSep=2pt, LineWidth=0.5pt]
+
+  \tikzset{EdgeStyle/.style= {%
+      color           = white,
+      double          = black,
+      double distance = 0.5pt}}
+
+  \setlength{\fboxsep}{1pt}
+
+  \scriptsize
   \begin{center}
     \foreach \n in {10,18,22,24,25}{%
       \begin{minipage}{0.18\linewidth}
@@ -39,6 +40,7 @@
       \end{minipage}
     }
     \bigskip
+    \small
 
     13 gráficas con una arista con un extremo dominado
 \end{center}

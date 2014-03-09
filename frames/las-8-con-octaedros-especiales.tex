@@ -4,16 +4,16 @@
 
 \begin{document}
 
-\SetVertexSimple[FillColor=gray, MinSize=1pt, InnerSep=2pt, LineWidth=0.5pt]
-
-\tikzset{EdgeStyle/.style= {%
-    color           = white,
-    double          = black,
-    double distance = 0.5pt}}
-
-\setlength{\fboxsep}{1pt}
-
 \begin{standaloneframe}
+  \SetVertexSimple[FillColor=gray, MinSize=1pt, InnerSep=2pt, LineWidth=0.5pt]
+
+  \tikzset{EdgeStyle/.style= {%
+      color           = white,
+      double          = black,
+      double distance = 0.5pt}}
+
+  \setlength{\fboxsep}{1pt}
+
   \scriptsize
   \begin{center}
     \foreach \n in {20,35,39,41}{%
@@ -30,7 +30,9 @@
         \graphst{i=\n}{0.6}\\ \names{i=\n}
       \end{minipage}
     }
-    \bigskip
+
+    \bigskip\bigskip
+    \small
 
     8 gráficas tal que cualquier extensión es divergente
   \end{center}
