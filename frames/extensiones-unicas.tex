@@ -1,0 +1,55 @@
+\documentclass[beamer]{standalone}
+
+\input{../veracruz.sty}
+
+\begin{document}
+
+\SetVertexSimple[FillColor=gray, MinSize=0.7pt, InnerSep=0.7pt, LineWidth=0.5pt]
+
+\tikzset{EdgeStyle/.style= {%
+    color           = white,
+    double          = black,
+    double distance = 0.5pt}}
+
+\setlength{\fboxsep}{1pt}
+
+\begin{standaloneframe}
+    \begin{center}
+    %\tiny
+    \scriptsize
+    \begin{tabular}{|M|M|}
+      \hline
+      $L$ & loc. $L$ \\
+      \hline
+      $K_{1}$ & $K_{2}$ \\
+      $K_{2}$ & $K_{3}$ \\
+      $K_{3}$ & $K_{4}$\\
+      $C_{4}$ & $O_{3}$\\
+      $K_{4}$ & $K_{5}$\\
+      $C_{5}$ & icosaedro\\
+      \graphst{i=25}{0.3} & \only<1>{$\overline{C_{8}}$} \only<2->{\includegraphics[width=0.6cm]{antiprism4}}\\
+      $K_{5}$ & $K_{6}$\\
+      \graphst{i=53}{0.3} & \only<1-2>{cubo chato} \only<3->{\includegraphics[width=0.6cm]{snubcube}}\\
+      \hline
+    \end{tabular}
+    \begin{tabular}{|M|M|}
+      \hline
+      $L$ & loc. $L$ \\
+      \hline
+      \graphst{i=57}{0.3} & \only<1-3>{$L(O_{3})$} \only<4->{\includegraphics[width=0.6cm]{cuboctaedro}} \\
+      \graphst{i=58}{0.3} & \only<1-4>{$L(K_{5})$} \only<5->{tipo de $\vee_{4} S^{2}$} \\
+      \graphst{i=60}{0.3} & \only<1-5>{$C_{10}^{2,4}$} \only<6->{\includegraphics[width=0.6cm]{antiprism5}}\\
+      $K_{3,3}$ & \only<1-6>{$K_{3,3,3}$} \only<7->{tipo de $\vee_{8} S^{2}$}\\
+      \graphst{i=62}{0.2} & \only<1-7>{$\overline{C_{9}}$} \only<8->{tipo de $\vee_{2} S^{2}$} \\
+      $O_{3}$ & $O_{4}$\\
+      $K_{6}$ & $K_{7}$\\
+      \hline
+    \end{tabular}
+
+    \bigskip
+    \small
+
+    Las extensiones únicas
+  \end{center}
+\end{standaloneframe}
+\end{document}

@@ -1,5 +1,5 @@
 #+title: Clan comportamiento de gráficas con vecindad pequeña
-#+author: Rafael Villarroel Flores, UAEH\\[-0.5em]\scriptsize\textsl{Trabajo conjunto con Paco Larrión y Miguel Pizaña}
+#+author: Rafael Villarroel Flores, UAEH\\[-0.5em]\scriptsize\textit{Trabajo conjunto con Paco Larrión y Miguel Pizaña}
 #+options: toc:nil 
 #+date: \textsc{\small XXIX Coloquio Víctor Neumann-Lara}\\[-0.5em] 13 de marzo de 2014
 
@@ -104,17 +104,20 @@
 * Cubo chato 2
 #+latex: \input{frames/cubo-chato-dos}
 
-* Ejemplos
+* Conjetura falsa
+#+latex: \input{frames/conjetura-falsa}
 
-  Tenemos un ejemplo de una gráfica \(L\) de 9 vértices, con dos
-  extensiones \(G_{1}\), \(G_{2}\), tales que \(G_{1}\) es convergente
-  y \(G_{2}\) es divergente. 
+* Gráficas con una única extensión
+#+latex: \input{frames/las-16-unica-extension}
+
+* La extension unica
+#+latex: \input{frames/extensiones-unicas}
 
 * Final
 #+begin_center
-#+begin_huge
+#+begin_large
 ¡Gracias!
-#+end_huge
+#+end_large
 #+end_center
 * COMMENT Problemas abiertos
   - ¿Qué determina que una gráfica tenga una única extensión?
